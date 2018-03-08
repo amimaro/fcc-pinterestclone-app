@@ -20,8 +20,9 @@
             <a class="navbar-item" [routerLink]="['/profile']" *ngIf="appService.isLoggedIn">
               Profile
             </a>
-            <a class="navbar-item" [routerLink]="['/login']" *ngIf="!appService.isLoggedIn">
-              Login
+            <a class="navbar-item" (click)="appService.login()" *ngIf="!appService.isLoggedIn">
+              <span class="icon"><i class="fa fa-twitter"></i></span>
+              <span>Login with Twitter</span>
             </a>
             <a class="navbar-item" (click)="appService.logout()" *ngIf="appService.isLoggedIn">
               Logout

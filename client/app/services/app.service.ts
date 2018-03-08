@@ -40,20 +40,8 @@ export class AppService {
       });
   }
 
-  loginFacebook() {
-    window.location.href = '/api/user/auth/facebook/login';
-  }
-
-  loginTwitter() {
+  login() {
     window.location.href = '/api/user/auth/twitter/login';
-  }
-
-  loginGoogle() {
-    window.location.href = '/api/user/auth/google/login';
-  }
-
-  loginGithub() {
-    window.location.href = '/api/user/auth/github/login';
   }
 
   logout() {
