@@ -1,5 +1,5 @@
 ## FreeCodeCamp - Backend Challenges
-## Dynamic Web Application Projects: [Build a Pinterest Clone Incomplete  ](https://www.freecodecamp.org/challenges/build-a-pinterest-clone)
+## Dynamic Web Application Projects: [Build a Pinterest Clone](https://www.freecodecamp.org/challenges/build-a-pinterest-clone)
 ## fcc-pinterestclone-app
 
 ### Getting started
