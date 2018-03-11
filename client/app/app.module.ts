@@ -10,11 +10,16 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 import { AppService } from './services/app.service';
 import { ProfileComponent } from './pages/profile/profile.component';
+import { MyWondersComponent } from './pages/my-wonders/my-wonders.component';
 
 const appRoutes: Routes = [
   {
     path: '',
     component: HomeComponent
+  },
+  {
+    path: 'mywonders',
+    component: MyWondersComponent
   },
   {
     path: 'profile',
@@ -28,7 +33,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    MyWondersComponent,
   ],
   imports: [
     BrowserModule,
