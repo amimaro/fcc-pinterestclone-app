@@ -1,0 +1,12 @@
+.is-dark {
+  /*opacity: 0.5;
+  filter: alpha(opacity=50);*/
+  background: rgb(21, 21, 21);
+  background: rgba(21, 21, 21, 0.5);
+}
+
+.hero.is-dark a.navbar-item:hover, .hero.is-dark a.navbar-item.is-active, .hero.is-dark .navbar-link:hover, .hero.is-dark .navbar-link.is-active {
+  background: rgb(16, 16, 16);
+  background: rgba(16, 16, 16, 0.5);
+  color: whitesmoke;
+}
