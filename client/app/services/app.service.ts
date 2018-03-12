@@ -16,6 +16,7 @@ export class AppService {
     private http: HttpClient
   ) {
     this.getIsLoggedIn();
+    this.getAllWonders();
   }
 
   routeTo(route) {
