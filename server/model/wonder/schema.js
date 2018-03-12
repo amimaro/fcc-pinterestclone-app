@@ -4,7 +4,8 @@ const Schema = mongoose.Schema;
 
 const wonder = new Schema({
   title: { type: String, required: true },
-  body: { type: String }
+  link: { type: String },
+  hashtags: { type: String }
 });
 
 
