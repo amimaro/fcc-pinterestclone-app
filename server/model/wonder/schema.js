@@ -3,9 +3,20 @@ const Schema = mongoose.Schema;
 
 
 const wonder = new Schema({
-  title: { type: String, required: true },
-  link: { type: String },
-  hashtags: { type: String }
+  title: {
+    type: String,
+    required: true
+  },
+  link: {
+    type: String
+  },
+  hashtags: {
+    type: String
+  },
+  owner: {
+    type: Schema.Types.ObjectId,
+    ref: 'User'
+  }
 });
 
 
