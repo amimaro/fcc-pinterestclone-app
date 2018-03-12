@@ -5,18 +5,17 @@
 <h1 class="title">My Wonders</h1>
 <hr>
 <div class="columns is-multiline is-mobile has-text-centered">
-  <!-- <div class="column is-one-quarter" *ngFor="let book of appService.myBooks"> -->
-  <div class="column is-one-quarter">
+  <div class="column is-one-quarter" *ngFor="let wonder of appService.wonders">
     <div class="card">
       <div class="card-image">
         <figure class="image is-3by4">
-          <img src="assets/milky-way-2695569_1920.jpg" alt="Placeholder image">
+          <img src="{{ wonder.link }}" alt="Placeholder image" (error)="updateUrl($event)">
         </figure>
       </div>
       <div class="card-content">
         <div class="media">
           <div class="media-content">
-            <p class="subtitle is-4 has-text-centered">Wonderful</p>
+            <p class="subtitle is-4 has-text-centered">{{ wonder.title }}</p>
             <div class="pull-left">
               <span class="icon"><i class="fa fa-times-circle-o"></i></span>
             </div>

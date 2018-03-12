@@ -43,8 +43,8 @@ export class MyWondersComponent implements OnInit {
     }
   }
 
-  updateUrl(e) {
-    this.imgSrc = 'https://bulma.io/images/placeholders/128x128.png';
+  updateUrl(ev) {
+    ev.target.src = 'https://bulma.io/images/placeholders/128x128.png';
   }
 
   updateImage() {
@@ -52,7 +52,7 @@ export class MyWondersComponent implements OnInit {
   }
 
   updateHashtag() {
-    
+
   }
 
   save() {
