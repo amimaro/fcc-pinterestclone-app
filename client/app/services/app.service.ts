@@ -9,6 +9,7 @@ export class AppService {
   message: string = "";
   apiUrl: string = 'http://localhost:8080/api/';
   isLoggedIn: boolean = false;
+  wonders: any = [];
 
   constructor(
     private router: Router,
@@ -53,6 +54,20 @@ export class AppService {
     .subscribe(
       res => {
         alert('Wonder Saved!');
+      },
+      err => {
+        console.error(err);
+        if(err.status == 401)
+          alert('Unauthorized');
+      }
+    )
+  }
+
+  getAllWonders() {
+    this.http.get(this.apiUrl + 'wonder')
+    .subscribe(
+      res => {
+        this.wonders = res;
       },
       err => {
         console.error(err);
