@@ -9,7 +9,7 @@ import { AppService } from '../../services/app.service';
 })
 export class MyWondersComponent implements OnInit {
 
-  isModalActive: boolean = true;
+  isModalActive: boolean = false;
   form: any = {
     title: '',
     link: '',
@@ -18,15 +18,15 @@ export class MyWondersComponent implements OnInit {
   imgSrc: string = 'https://bulma.io/images/placeholders/128x128.png';
 
   constructor(public appService: AppService) {
-    // this.appService.getSession().subscribe(
-    //   res => {
-    //     console.log(res);
-    //   },
-    //   err => {
-    //     console.log("Error occured");
-    //     console.log(err);
-    //     this.appService.routeTo(['/'])
-    //   });
+    this.appService.getSession().subscribe(
+      res => {
+        console.log(res);
+      },
+      err => {
+        console.log("Error occured");
+        console.log(err);
+        this.appService.routeTo(['/'])
+      });
   }
 
   ngOnInit() {
