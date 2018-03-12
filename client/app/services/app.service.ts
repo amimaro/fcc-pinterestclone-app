@@ -48,4 +48,16 @@ export class AppService {
     window.location.href = '/api/user/auth/logout';
   }
 
+  save(form) {
+    this.http.post(this.apiUrl + 'wonder', form)
+    .subscribe(
+      res => {
+        alert('Wonder Saved!');
+      },
+      err => {
+        console.error(err);
+      }
+    )
+  }
+
 }

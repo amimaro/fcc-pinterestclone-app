@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { AppService } from '../../services/app.service';
+
 @Component({
   selector: 'app-my-wonders',
   templateUrl: './my-wonders.component.html',
@@ -14,8 +16,16 @@ export class MyWondersComponent implements OnInit {
   };
   imgSrc: string = 'https://bulma.io/images/placeholders/128x128.png';
 
-  constructor() {
-
+  constructor(public appService: AppService) {
+    // this.appService.getSession().subscribe(
+    //   res => {
+    //     console.log(res);
+    //   },
+    //   err => {
+    //     console.log("Error occured");
+    //     console.log(err);
+    //     this.appService.routeTo(['/'])
+    //   });
   }
 
   ngOnInit() {
@@ -23,7 +33,7 @@ export class MyWondersComponent implements OnInit {
 
   toggleModal() {
     this.isModalActive = !this.isModalActive;
-    if(this.isModalActive == false){
+    if (this.isModalActive == false) {
       this.form = {
         title: '',
         link: '',
@@ -37,6 +47,10 @@ export class MyWondersComponent implements OnInit {
 
   updateImage() {
     this.imgSrc = this.form.link;
+  }
+
+  save() {
+    this.appService.save(this.form);
   }
 
 }
