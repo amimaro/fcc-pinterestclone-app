@@ -60,6 +60,12 @@
           <input class="input" type="text" placeholder="HTTP Link" [(ngModel)]="form.link" (change)="updateImage()">
         </div>
       </div>
+      <div class="field">
+        <label class="label">Hashtags</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Separete them by space or comma" [(ngModel)]="form.hashtags" (change)="updateHashtag()">
+        </div>
+      </div>
     </section>
     <footer class="modal-card-foot">
       <button class="button is-success">Save</button>

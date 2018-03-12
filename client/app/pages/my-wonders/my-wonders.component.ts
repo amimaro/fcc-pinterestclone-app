@@ -12,7 +12,8 @@ export class MyWondersComponent implements OnInit {
   isModalActive: boolean = true;
   form: any = {
     title: '',
-    link: ''
+    link: '',
+    hashtags: '',
   };
   imgSrc: string = 'https://bulma.io/images/placeholders/128x128.png';
 
@@ -37,6 +38,7 @@ export class MyWondersComponent implements OnInit {
       this.form = {
         title: '',
         link: '',
+        hashtags: ''
       }
     }
   }
@@ -47,6 +49,10 @@ export class MyWondersComponent implements OnInit {
 
   updateImage() {
     this.imgSrc = this.form.link;
+  }
+
+  updateHashtag() {
+    
   }
 
   save() {
