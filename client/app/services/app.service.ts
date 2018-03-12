@@ -10,6 +10,7 @@ export class AppService {
   apiUrl: string = 'http://localhost:8080/api/';
   isLoggedIn: boolean = false;
   wonders: any = [];
+  mywonders: any = [];
 
   constructor(
     private router: Router,
@@ -17,6 +18,7 @@ export class AppService {
   ) {
     this.getIsLoggedIn();
     this.getAllWonders();
+    this.getWondersByUser();
   }
 
   routeTo(route) {
@@ -55,6 +57,8 @@ export class AppService {
     .subscribe(
       res => {
         alert('Wonder Saved!');
+        this.getAllWonders();
+        this.getWondersByUser();
       },
       err => {
         console.error(err);
@@ -69,6 +73,18 @@ export class AppService {
     .subscribe(
       res => {
         this.wonders = res;
+      },
+      err => {
+        console.error(err);
+      }
+    )
+  }
+
+  getWondersByUser() {
+    this.http.get(this.apiUrl + 'wonder/user')
+    .subscribe(
+      res => {
+        this.mywonders = res;
       },
       err => {
         console.error(err);

@@ -57,6 +57,7 @@ export class MyWondersComponent implements OnInit {
 
   save() {
     this.appService.save(this.form);
+    this.toggleModal();
   }
 
 }

@@ -15,6 +15,18 @@ class Wonder extends Controller {
     }
   }
 
+  findByUser(req, res, next) {
+    if (req.isAuthenticated()) {
+      return this.facade.find({
+          owner: req.user._id
+        })
+        .then(collection => res.status(200).json(collection))
+        .catch(err => next(err));
+    } else {
+      res.sendStatus(401);
+    }
+  }
+
 }
 
 module.exports = new Wonder(wonder);
