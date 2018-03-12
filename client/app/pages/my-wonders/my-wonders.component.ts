@@ -9,8 +9,8 @@ export class MyWondersComponent implements OnInit {
 
   isModalActive: boolean = true;
   form: any = {
-    title: 'Wonderful',
-    link: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Korb_mit_Br%C3%B6tchen.JPG'
+    title: '',
+    link: ''
   };
   imgSrc: string = 'https://bulma.io/images/placeholders/128x128.png';
 
@@ -23,6 +23,12 @@ export class MyWondersComponent implements OnInit {
 
   toggleModal() {
     this.isModalActive = !this.isModalActive;
+    if(this.isModalActive == false){
+      this.form = {
+        title: '',
+        link: '',
+      }
+    }
   }
 
   updateUrl(e) {
