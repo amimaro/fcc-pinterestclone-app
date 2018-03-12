@@ -5,7 +5,8 @@ class Wonder extends Controller {
 
   create(req, res, next) {
     if (req.isAuthenticated()) {
-      req.body.owner = req.user._id
+      req.body.owner = req.user._id;
+      req.body.likes = 0;
       this.facade.create(req.body)
         .then(doc => res.status(201).json(doc))
         .catch(err => next(err));

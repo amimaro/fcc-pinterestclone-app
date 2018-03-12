@@ -13,6 +13,9 @@ const wonder = new Schema({
   hashtags: {
     type: String
   },
+  likes: {
+    type: Number
+  },
   owner: {
     type: Schema.Types.ObjectId,
     ref: 'User'
