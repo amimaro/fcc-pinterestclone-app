@@ -1,4 +1,4 @@
-<a class="button is-link pull-right">
+<a class="button is-link pull-right" (click)="toggleModal()">
   <span class="icon"><i class="fa fa-plus"></i></span>
   <span>Add a Wonder</span>
 </a>
@@ -32,4 +32,38 @@
     </div>
   </div>
 </div>
+
 <br>
+
+<div class="modal" [ngClass]="{ 'is-active' : isModalActive }">
+  <div class="modal-background" (click)="toggleModal()"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Add a new Wonder</p>
+      <button class="delete" aria-label="close" (click)="toggleModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      <div align="center">
+        <figure class="image is-128x128" style="border:1px solid black;border-style: dotted;">
+          <img src="{{ imgSrc }}" (error)="updateUrl($event)">
+        </figure>
+      </div>
+      <div class="field">
+        <label class="label">Title</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Title" [(ngModel)]="form.title">
+        </div>
+      </div>
+      <div class="field">
+        <label class="label">Source (http link)</label>
+        <div class="control">
+          <input class="input" type="text" placeholder="Http Link" [(ngModel)]="form.link" (change)="updateImage()">
+        </div>
+      </div>
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button is-success">Save</button>
+      <button class="button" (click)="toggleModal()">Cancel</button>
+    </footer>
+  </div>
+</div>
