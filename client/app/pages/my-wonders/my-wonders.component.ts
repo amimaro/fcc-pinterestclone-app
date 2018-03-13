@@ -60,4 +60,8 @@ export class MyWondersComponent implements OnInit {
     this.toggleModal();
   }
 
+  delete(wonder) {
+    this.appService.deleteWonder(wonder);
+  }
+
 }

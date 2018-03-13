@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Injectable()
 export class AppService {
 
-  user: any;
+  user: any = {};
   message: string = "";
   apiUrl: string = 'http://localhost:8080/api/';
   isLoggedIn: boolean = false;
@@ -88,6 +88,20 @@ export class AppService {
       res => {
         console.log(res);
         this.mywonders = res;
+      },
+      err => {
+        console.error(err);
+      }
+      )
+  }
+
+  deleteWonder(wonder) {
+    this.http.delete(this.apiUrl + 'wonder/' + wonder._id)
+      .subscribe(
+      res => {
+        alert('Wonder Deleted!')
+        this.getAllWonders();
+        this.getWondersByUser();
       },
       err => {
         console.error(err);

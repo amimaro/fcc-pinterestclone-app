@@ -18,4 +18,8 @@ export class HomeComponent implements OnInit {
     ev.target.src = 'https://bulma.io/images/placeholders/128x128.png';
   }
 
+  delete(wonder) {
+    this.appService.deleteWonder(wonder);
+  }
+
 }

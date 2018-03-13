@@ -5,7 +5,7 @@
 <h1 class="title">My Wonders</h1>
 <hr>
 <div class="columns is-multiline is-mobile has-text-centered">
-  <div class="column is-one-quarter" *ngFor="let wonder of appService.mywonders">
+  <div class="column is-one-quarter" *ngFor="let wonder of appService.mywonders;">
     <div class="card">
       <div class="card-image">
         <figure class="image is-3by4">
@@ -17,7 +17,7 @@
           <div class="media-content">
             <p class="subtitle is-4 has-text-centered">{{ wonder.title }}</p>
             <div class="pull-left">
-              <span class="icon"><i class="fa fa-times-circle-o"></i></span>
+              <span class="icon" (click)="delete(wonder)"><i class="fa fa-times-circle-o"></i></span>
             </div>
             <div class="pull-right">
               <span class="icon"><i class="fa fa-heart"></i></span>
