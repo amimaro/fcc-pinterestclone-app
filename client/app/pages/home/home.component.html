@@ -12,7 +12,7 @@
           <div class="media">
             <div class="media-content">
               <p class="subtitle is-4 has-text-centered">{{ wonder.title }}</p>
-              <div class="pull-left">
+              <div class="pull-left" *ngIf="wonder.owner._id == appService.user._id">
                 <span class="icon"><i class="fa fa-times-circle-o"></i></span>
               </div>
               <div class="pull-right">

@@ -37,6 +37,7 @@ export class AppService {
       res => {
         this.isLoggedIn = true;
         console.log(this.isLoggedIn)
+        this.user = res;
       },
       err => {
         this.isLoggedIn = false;
@@ -54,7 +55,7 @@ export class AppService {
 
   save(form) {
     this.http.post(this.apiUrl + 'wonder', form)
-    .subscribe(
+      .subscribe(
       res => {
         alert('Wonder Saved!');
         this.getAllWonders();
@@ -62,34 +63,36 @@ export class AppService {
       },
       err => {
         console.error(err);
-        if(err.status == 401)
+        if (err.status == 401)
           alert('Unauthorized');
       }
-    )
+      )
   }
 
   getAllWonders() {
     this.http.get(this.apiUrl + 'wonder')
-    .subscribe(
+      .subscribe(
       res => {
+        console.log(res);
         this.wonders = res;
       },
       err => {
         console.error(err);
       }
-    )
+      )
   }
 
   getWondersByUser() {
     this.http.get(this.apiUrl + 'wonder/user')
-    .subscribe(
+      .subscribe(
       res => {
+        console.log(res);
         this.mywonders = res;
       },
       err => {
         console.error(err);
       }
-    )
+      )
   }
 
 }
