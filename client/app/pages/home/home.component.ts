@@ -22,4 +22,8 @@ export class HomeComponent implements OnInit {
     this.appService.deleteWonder(wonder);
   }
 
+  like(wonder) {
+    this.appService.likeWonder(wonder);
+  }
+
 }
