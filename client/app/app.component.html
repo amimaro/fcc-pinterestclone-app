@@ -14,8 +14,7 @@
             <a class="navbar-item" [routerLink]="['/']">
               Home
             </a>
-            <!-- <a class="navbar-item" [routerLink]="['/mywonders']" *ngIf="appService.isLoggedIn"> -->
-            <a class="navbar-item" [routerLink]="['/mywonders']" >
+            <a class="navbar-item" [routerLink]="['/mywonders']" *ngIf="appService.isLoggedIn">
               My Wonders
             </a>
             <a class="navbar-item" [routerLink]="['/profile']" *ngIf="appService.isLoggedIn">
