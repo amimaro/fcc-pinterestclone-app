@@ -73,7 +73,13 @@ export class AppService {
       .subscribe(
       res => {
         console.log(res);
-        this.wonders = res;
+        if (Object.values(res).length != this.wonders.length)
+          this.wonders = res;
+        else {
+          Object.values(res).map((wonder, index) => {
+            this.wonders[index]['likes'] = wonder['likes'];
+          });
+        }
       },
       err => {
         console.error(err);
@@ -86,7 +92,13 @@ export class AppService {
       .subscribe(
       res => {
         console.log(res);
-        this.mywonders = res;
+        if (Object.values(res).length != this.mywonders.length)
+          this.mywonders = res;
+        else {
+          Object.values(res).map((wonder, index) => {
+            this.mywonders[index]['likes'] = wonder['likes'];
+          });
+        }
       },
       err => {
         console.error(err);
