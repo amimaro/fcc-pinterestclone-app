@@ -10,7 +10,7 @@ router.route('/user')
   .get((...args) => controller.findByUser(...args));
 
 router.route('/:id')
-  .put((...args) => controller.update(...args))
+  .put((...args) => controller.like(...args))
   .get((...args) => controller.findById(...args))
   .delete((...args) => controller.remove(...args));
 
