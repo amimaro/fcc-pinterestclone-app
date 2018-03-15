@@ -21,6 +21,7 @@ export class MyWondersComponent implements OnInit {
     this.appService.getSession().subscribe(
       res => {
         console.log(res);
+        this.appService.getWondersByUser();
       },
       err => {
         console.log("Error occured");

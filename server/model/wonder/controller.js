@@ -37,6 +37,7 @@ class Wonder extends Controller {
           }
         })
         .then((results) => {
+          console.log(results);
           if (results.n < 1) {
             return res.sendStatus(404);
           }

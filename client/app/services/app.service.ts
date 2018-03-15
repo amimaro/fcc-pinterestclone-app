@@ -18,7 +18,6 @@ export class AppService {
   ) {
     this.getIsLoggedIn();
     this.getAllWonders();
-    this.getWondersByUser();
   }
 
   routeTo(route) {
