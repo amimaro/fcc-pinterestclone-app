@@ -16,8 +16,8 @@
                 <span class="icon" (click)="delete(wonder)"><i class="fa fa-times-circle-o"></i></span>
               </div>
               <div class="pull-right">
-                <span class="icon" (click)="like(wonder)"><i class="fa fa-heart"></i></span>
-                <span>0</span>
+                <span class="icon" [ngClass]="{ 'has-text-danger' : wonder.likes > 0 }" (click)="like(wonder)"><i class="fa fa-heart"></i></span>
+                <span>{{ wonder.likes }}</span>
               </div>
             </div>
           </div>

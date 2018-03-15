@@ -113,7 +113,6 @@ export class AppService {
     this.http.put(this.apiUrl + 'wonder/' + wonder._id, wonder)
       .subscribe(
       res => {
-        alert('Wonder Deleted!')
         this.getAllWonders();
         this.getWondersByUser();
       },
