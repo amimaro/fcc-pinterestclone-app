@@ -11,6 +11,9 @@ function isLoggedIn(req, res, next) {
 router.route('/likewonder/:id')
   .put((...args) => controller.addLike(...args));
 
+router.route('/unlikewonder/:id')
+  .put((...args) => controller.addLike(...args));
+
 router.route('/')
   .get((...args) => controller.find(...args))
   .post((...args) => controller.create(...args));

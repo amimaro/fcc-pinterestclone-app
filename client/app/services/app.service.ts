@@ -147,7 +147,7 @@ export class AppService {
   }
 
   unLikeWonder(wonder) {
-    this.http.put(this.apiUrl + 'user/likewonder/' + wonder._id, wonder)
+    this.http.put(this.apiUrl + 'user/unlikewonder/' + wonder._id, wonder)
       .subscribe(
       res => {
         this.http.put(this.apiUrl + 'wonder/' + wonder._id, wonder)
