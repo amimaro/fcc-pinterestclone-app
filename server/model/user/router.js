@@ -8,7 +8,7 @@ function isLoggedIn(req, res, next) {
   res.redirect('/login');
 }
 
-router.route('/wonder/:id')
+router.route('/likewonder/:id')
   .put((...args) => controller.addLike(...args));
 
 router.route('/')
