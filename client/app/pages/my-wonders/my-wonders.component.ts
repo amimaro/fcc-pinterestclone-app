@@ -52,7 +52,7 @@ export class MyWondersComponent implements OnInit {
     this.imgSrc = this.form.link;
   }
 
-  updateHashtag() {
+  updateTags() {
 
   }
 

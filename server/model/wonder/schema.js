@@ -10,7 +10,7 @@ const wonder = new Schema({
   link: {
     type: String
   },
-  hashtags: {
+  tags: {
     type: String
   },
   likes: {
