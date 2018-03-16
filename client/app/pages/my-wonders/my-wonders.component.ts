@@ -70,7 +70,7 @@ export class MyWondersComponent implements OnInit {
   }
 
   iLiked(wonder) {
-    this.appService.iLiked(wonder);
+    return this.appService.iLiked(wonder);
   }
 
 }
