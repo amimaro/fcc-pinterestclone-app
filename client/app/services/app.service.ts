@@ -85,6 +85,7 @@ export class AppService {
         console.error(err);
       }
       )
+      this.getIsLoggedIn();
   }
 
   getWondersByUser() {
