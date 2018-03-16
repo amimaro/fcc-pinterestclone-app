@@ -7,9 +7,9 @@ const userSchema = new Schema({
     id: String,
     token: String,
     displayName: String,
-    username: String,
-    likedWonders: [{ type: Schema.Types.ObjectId, ref: 'Wonder' }]
-  }
+    username: String
+  },
+  likedWonders: [{ type: Schema.Types.ObjectId, ref: 'Wonder' }]
 });
 
 userSchema.methods.generateHash = function(password) {
