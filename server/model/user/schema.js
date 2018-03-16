@@ -7,7 +7,8 @@ const userSchema = new Schema({
     id: String,
     token: String,
     displayName: String,
-    username: String
+    username: String,
+    likedWonders: [{ type: Schema.Types.ObjectId, ref: 'Wonder' }]
   }
 });
 
