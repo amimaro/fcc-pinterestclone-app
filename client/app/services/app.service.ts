@@ -127,7 +127,9 @@ export class AppService {
         this.getAllWonders();
         this.getWondersByUser();
       },
-      err => {        
+      err => {
+        if(err.status == 401)
+          alert('Please, login first...');
         console.error(err);
       }
       )
