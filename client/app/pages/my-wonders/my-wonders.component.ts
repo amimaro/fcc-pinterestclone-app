@@ -65,8 +65,11 @@ export class MyWondersComponent implements OnInit {
     this.appService.deleteWonder(wonder);
   }
 
-  like(wonder) {
-    this.appService.likeWonder(wonder);
+  like(wonder, ev) {
+    if (ev.target.parentElement.className.indexOf('has-text-danger') < 0)
+      this.appService.likeWonder(wonder);
+    else
+      this.appService.unLikeWonder(wonder);
   }
 
   iLiked(wonder) {
