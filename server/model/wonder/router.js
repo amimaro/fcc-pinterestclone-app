@@ -9,8 +9,13 @@ router.route('/')
 router.route('/user')
   .get((...args) => controller.findByUser(...args));
 
+router.route('/like/:id')
+  .put((...args) => controller.like(...args));
+router.route('/unlike/:id')
+  .put((...args) => controller.unlike(...args))
+
 router.route('/:id')
-  .put((...args) => controller.like(...args))
+  .put((...args) => controller.update(...args))
   .get((...args) => controller.findById(...args))
   .delete((...args) => controller.remove(...args));
 

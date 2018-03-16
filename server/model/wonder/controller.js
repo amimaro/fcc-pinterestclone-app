@@ -52,6 +52,31 @@ class Wonder extends Controller {
     }
   }
 
+  unlike(req, res, next) {
+    if (req.isAuthenticated()) {
+      this.facade.update({
+          _id: req.params.id
+        }, {
+          $inc: {
+            likes: -1
+          }
+        })
+        .then((results) => {
+          console.log(results);
+          if (results.n < 1) {
+            return res.sendStatus(404);
+          }
+          if (results.nModified < 1) {
+            return res.sendStatus(304);
+          }
+          res.sendStatus(204);
+        })
+        .catch(err => next(err));
+    } else {
+      res.sendStatus(401);
+    }
+  }
+
 }
 
 module.exports = new Wonder(wonder);
