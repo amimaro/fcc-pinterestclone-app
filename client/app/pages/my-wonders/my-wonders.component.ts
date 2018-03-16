@@ -13,7 +13,7 @@ export class MyWondersComponent implements OnInit {
   form: any = {
     title: '',
     link: '',
-    hashtags: '',
+    tags: '',
   };
   imgSrc: string = 'https://bulma.io/images/placeholders/128x128.png';
 
@@ -39,7 +39,7 @@ export class MyWondersComponent implements OnInit {
       this.form = {
         title: '',
         link: '',
-        hashtags: ''
+        tags: ''
       }
     }
   }
@@ -52,13 +52,16 @@ export class MyWondersComponent implements OnInit {
     this.imgSrc = this.form.link;
   }
 
-  updateTags() {
+  updateTags(ev) {
+    if(ev.key == ' ') {
 
+    }
   }
 
   save() {
-    this.appService.save(this.form);
-    this.toggleModal();
+    console.log(this.form)
+    // this.appService.save(this.form);
+    // this.toggleModal();
   }
 
   delete(wonder) {

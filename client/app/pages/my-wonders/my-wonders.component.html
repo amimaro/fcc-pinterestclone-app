@@ -60,7 +60,8 @@
       <div class="field">
         <label class="label">Tags</label>
         <div class="control">
-          <input class="input" type="text" placeholder="Separete them by space or comma" [(ngModel)]="form.tags" (change)="updateTags()">
+          <tag-input [(ngModel)]="form.tags" [inputClass]="'myinput'" [inputId]="'myinputId'" [separatorKeyCodes]="[32, 188]">
+          </tag-input>
         </div>
       </div>
     </section>
