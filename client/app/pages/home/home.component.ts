@@ -23,10 +23,14 @@ export class HomeComponent implements OnInit {
   }
 
   like(wonder, ev) {
-    if (ev.target.parentElement.className.indexOf('has-text-danger') < 0)
+    if (ev.target.parentElement.className.indexOf('has-text-danger') < 0) {
       this.appService.likeWonder(wonder);
-    else
+      ev.target.parentElement.classList.add('has-text-danger');
+    }
+    else {
       this.appService.unLikeWonder(wonder);
+      ev.target.parentElement.classList.remove('has-text-danger');
+    }
   }
 
   iLiked(wonder) {
