@@ -26,4 +26,8 @@ export class HomeComponent implements OnInit {
     this.appService.likeWonder(wonder);
   }
 
+  iLiked(wonder) {
+    this.appService.iLiked(wonder);
+  }
+
 }

@@ -127,10 +127,20 @@ export class AppService {
         this.getAllWonders();
         this.getWondersByUser();
       },
-      err => {
+      err => {        
         console.error(err);
       }
       )
+  }
+
+  iLiked(wonder) {
+    if (this.user.hasOwnProperty('likedWonders'))
+      this.user.likedWonders.map((liked) => {
+        console.log(liked);
+        if (liked == wonder._id)
+          return true;
+      });
+    return false;
   }
 
 }
