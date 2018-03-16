@@ -8,6 +8,9 @@ function isLoggedIn(req, res, next) {
   res.redirect('/login');
 }
 
+router.route('/wonder/:id')
+  .put((...args) => controller.addLike(...args));
+
 router.route('/')
   .get((...args) => controller.find(...args))
   .post((...args) => controller.create(...args));

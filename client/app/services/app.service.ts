@@ -85,7 +85,7 @@ export class AppService {
         console.error(err);
       }
       )
-      this.getIsLoggedIn();
+    this.getIsLoggedIn();
   }
 
   getWondersByUser() {
@@ -122,14 +122,24 @@ export class AppService {
   }
 
   likeWonder(wonder) {
-    this.http.put(this.apiUrl + 'wonder/' + wonder._id, wonder)
+    this.http.put(this.apiUrl + 'user/wonder/' + wonder._id, wonder)
       .subscribe(
       res => {
-        this.getAllWonders();
-        this.getWondersByUser();
+        this.http.put(this.apiUrl + 'wonder/' + wonder._id, wonder)
+          .subscribe(
+          res => {
+            this.getAllWonders();
+            this.getWondersByUser();
+          },
+          err => {
+            if (err.status == 401)
+              alert('Please, login first...');
+            console.error(err);
+          }
+          )
       },
       err => {
-        if(err.status == 401)
+        if (err.status == 401)
           alert('Please, login first...');
         console.error(err);
       }
@@ -138,11 +148,11 @@ export class AppService {
 
   iLiked(wonder) {
     if (this.user.hasOwnProperty('likedWonders'))
-      this.user.likedWonders.map((liked) => {
-        console.log(liked);
-        if (liked == wonder._id)
+      for (let liked of this.user.likedWonders) {
+        if (liked == wonder._id) {
           return true;
-      });
+        }
+      }
     return false;
   }
 
