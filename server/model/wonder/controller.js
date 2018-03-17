@@ -77,6 +77,27 @@ class Wonder extends Controller {
     }
   }
 
+  findByTag(req, res, next) {
+    return this.facade.find({
+        tags: req.params.tag
+      })
+      .then(collection => res.status(200).json(collection))
+      .catch(err => next(err));
+  }
+
+  findByTagByUser(req, res, next) {
+    if (req.isAuthenticated()) {
+      return this.facade.find({
+          owner: req.user._id,
+          tags: req.params.tag
+        })
+        .then(collection => res.status(200).json(collection))
+        .catch(err => next(err));
+    } else {
+      res.sendStatus(401);
+    }
+  }
+
 }
 
 module.exports = new Wonder(wonder);
