@@ -83,7 +83,7 @@ export class MyWondersComponent implements OnInit {
   }
 
   searchTag(tag) {
-    this.appService.searchTag(tag);
+    this.appService.searchMyTag(tag);
   }
 
 }

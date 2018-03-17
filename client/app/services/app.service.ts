@@ -194,4 +194,17 @@ export class AppService {
       )
   }
 
+  searchMyTag(tag) {
+    this.http.get(this.apiUrl + 'wonder/user/tag/' + tag)
+      .subscribe(
+      res => {
+        console.log(res);
+        this.mywonders = res;
+      },
+      err => {
+        console.error(err);
+      }
+      )
+  }
+
 }
