@@ -82,4 +82,8 @@ export class MyWondersComponent implements OnInit {
     return this.appService.iLiked(wonder);
   }
 
+  searchTag(tag) {
+    console.log(tag)
+  }
+
 }

@@ -17,7 +17,7 @@
           <div class="media-content">
             <p class="subtitle is-4 has-text-centered">{{ wonder.title }}</p>
             <div style="margin-bottom: 10px">
-              <span class="tag is-link" *ngFor="let tag of wonder.tags">
+              <span class="tag is-info" *ngFor="let tag of wonder.tags" (click)="searchTag(tag.value)">
                 {{ tag.value }}
               </span>
             </div>

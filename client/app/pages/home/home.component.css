@@ -8,3 +8,8 @@
 .icon {
   cursor: pointer;
 }
+
+.tag {
+  margin-right: 5px;
+  cursor: pointer;
+}
