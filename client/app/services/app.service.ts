@@ -53,6 +53,9 @@ export class AppService {
   }
 
   save(form) {
+    form.tags = form.tags.map((tag) => {
+      return tag.value;
+    })
     this.http.post(this.apiUrl + 'wonder', form)
       .subscribe(
       res => {
