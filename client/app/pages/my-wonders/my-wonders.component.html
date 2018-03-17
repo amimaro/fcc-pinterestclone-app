@@ -16,6 +16,11 @@
         <div class="media">
           <div class="media-content">
             <p class="subtitle is-4 has-text-centered">{{ wonder.title }}</p>
+            <div style="margin-bottom: 10px">
+              <span class="tag is-link" *ngFor="let tag of wonder.tags">
+                {{ tag.value }}
+              </span>
+            </div>
             <div class="pull-left">
               <span class="icon" (click)="delete(wonder)"><i class="fa fa-times-circle-o"></i></span>
             </div>
