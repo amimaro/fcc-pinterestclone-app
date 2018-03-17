@@ -11,7 +11,7 @@ const wonder = new Schema({
     type: String
   },
   tags: {
-    type: [{ type: Object }]
+    type: Array
   },
   likes: {
     type: Number
