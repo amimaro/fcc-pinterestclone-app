@@ -59,9 +59,8 @@ export class MyWondersComponent implements OnInit {
   }
 
   save() {
-    console.log(this.form)
-    // this.appService.save(this.form);
-    // this.toggleModal();
+    this.appService.save(this.form);
+    this.toggleModal();
   }
 
   delete(wonder) {
