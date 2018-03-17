@@ -6,6 +6,11 @@ router.route('/')
   .get((...args) => controller.find(...args))
   .post((...args) => controller.create(...args));
 
+router.route('/tag/:tag')
+  .get((...args) => controller.findByTag(...args));
+
+router.route('/user/tag/:tag')
+  .get((...args) => controller.findByTagByUser(...args));
 router.route('/user')
   .get((...args) => controller.findByUser(...args));
 
