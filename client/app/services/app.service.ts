@@ -181,4 +181,17 @@ export class AppService {
     return false;
   }
 
+  searchTag(tag) {
+    this.http.get(this.apiUrl + 'wonder/tag/' + tag)
+      .subscribe(
+      res => {
+        console.log(res);
+        this.wonders = res;
+      },
+      err => {
+        console.error(err);
+      }
+      )
+  }
+
 }

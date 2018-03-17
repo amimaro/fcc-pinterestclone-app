@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
   }
 
   searchTag(tag) {
-    console.log(tag)
+    this.appService.searchTag(tag);
   }
 
 }
