@@ -16,7 +16,7 @@ import { MyWondersComponent } from './pages/my-wonders/my-wonders.component';
 
 const appRoutes: Routes = [
   {
-    path: '',
+    path: 'home',
     component: HomeComponent
   },
   {
@@ -26,6 +26,11 @@ const appRoutes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
   },
   { path: '**', component: NotFoundComponent }
 ];
