@@ -17,6 +17,9 @@
                   {{ tag }}
                 </span>
               </div>
+              <div style="margin-bottom: 10px">
+                <p>Wanderer: {{ wonder.owner.twitter.username }}</p>
+              </div>
               <div class="pull-left" *ngIf="wonder.owner._id == appService.user._id">
                 <span class="icon" (click)="delete(wonder)"><i class="fa fa-times-circle-o"></i></span>
               </div>
