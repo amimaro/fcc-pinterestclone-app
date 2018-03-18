@@ -7,7 +7,7 @@ export class AppService {
 
   user: any = {};
   message: string = "";
-  apiUrl: string = 'http://localhost:8080/api/';
+  apiUrl: string = 'https://fcc-pinterestclone-app.herokuapp.com/api/';
   isLoggedIn: boolean = false;
   wonders: any = [];
   mywonders: any = [];
