@@ -1,7 +1,7 @@
 <h1 class="mega-title has-text-centered">#ShareWonder</h1>
 <hr>
-<div class="columns is-multiline is-mobile has-text-centered">
-  <div class="column" *ngFor="let wonder of appService.wonders;">
+<div class="columns is-multiline">
+  <div class="column is-one-quarter" *ngFor="let wonder of appService.wonders;">
       <div class="card">
         <div class="card-image">
           <figure class="image is-3by4">
@@ -16,6 +16,9 @@
                 <span class="tag is-info" *ngFor="let tag of wonder.tags" (click)="searchTag(tag)">
                   {{ tag }}
                 </span>
+              </div>
+              <div style="margin-bottom: 10px">
+                <p>Wanderer: {{ wonder.owner.twitter.username }}</p>
               </div>
               <div class="pull-left" *ngIf="wonder.owner._id == appService.user._id">
                 <span class="icon" (click)="delete(wonder)"><i class="fa fa-times-circle-o"></i></span>
